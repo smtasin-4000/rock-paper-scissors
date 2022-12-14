@@ -1,43 +1,48 @@
-const playerText = document.getElementById('playerText')
-const computerText = document.getElementById('computerText')
-const resultText = document.getElementById('resultText')
-const choosebtn = document.querySelectorAll('.chceBtn')
-let player;
-let computer;
-let result;
-choosebtn.forEach(btn=>{btn.addEventListener('click',()=>{
-    player = btn.textContent
-    computerChoice()
-    result = winchecker()
-    playerText.textContent = `Player:${player}`;
-    computerText.textContent = `Computer:${computer}`
-    resultText.textContent = `Result:${result}`
-})})
-function computerChoice(){
-   let n =  Math.floor(Math.random() * (3 - 1 + 1) ) + 1;
-   switch(n){
-    case 1:
-computer = 'ROCK'
-    break
-    case 2:
-computer = 'PAPER'
-    break
-    case 3:
-computer = 'SCISSORS'
-    break
-   }
+const playerEL = document.getElementById('player')
+const computerEL = document.getElementById('computer')
+const resultEL = document.getElementById('result')
+const chooseBtn = document.querySelectorAll('.btn')
+let playerchoose
+let computerchoose
+
+chooseBtn.forEach(butn=>{butn.addEventListener('click',()=>{playerchoose=butn.textContent;
+computerTurn()
+
+playerEL.innerText = `You choosed: ${playerchoose}`
+computerEL.innerText =`Computer choosed: ${computerchoose}`
+resultEL.innerText = `Result: ${resultFun()}`
+
+
 }
-function winchecker(){
-    if(computer==player){
-        return 'draw'
+)})
+
+function computerTurn(){
+    let rand = Math.floor(Math.random()*3)+1
+    switch (rand) {
+        case 1:
+            computerchoose = 'ROCK'
+            break;
+        case 2:
+            computerchoose = 'PAPER'
+            break;
+        case 3:
+            computerchoose = 'SCISSORS'
+            break;
+        
     }
-    else if(player=='ROCK'){
-        return (computer=='PAPER')?'player loose':'player win'
+    return computerchoose
+}
+function resultFun(){
+    if(playerchoose===computerchoose){
+        return 'Draw'
     }
-    else if(player=='PAPER'){
-        return (computer=='SCISSORS')?'player loose':'player win'
+    else if(computerchoose=="ROCK"){
+return (playerchoose=="PAPER")?'You Win!!!':'You Loose'
     }
-    else if(player=='SCISSORS'){
-        return (computer=='ROCK')?'player loose':'player win'
-    }
+    else if(computerchoose=="PAPER"){
+        return (playerchoose=="SCISSORS")?'You Win!!!':'You Loose'
+            }
+            else if(computerchoose=="SCISSORS"){
+                return (playerchoose=="ROCK")?'You Win!!!':'You Loose'
+                    }
 }
