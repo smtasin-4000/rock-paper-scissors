@@ -6,14 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rock-Paper-scissors</title>
   </head>
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&display=swap"
+    rel="stylesheet"
+  />
+
   <link rel="stylesheet" href="/styles.css" />
   <body>
-    <p id="player">You choosed:</p>
-    <p id="computer">Computer choosed:</p>
-    <p id="result">Result:</p>
-    <button class="btn" id="rock">ROCK</button>
-    <button class="btn" id="paper">PAPER</button>
-    <button class="btn" id="scissors">SCISSORS</button>
+    <div id="startPage">
+      <button class="button-49" role="button" href="gamePage">Start Now</button>
+    </div>
+
+    <div id="gamePage">
+      <div class="upper">
+        <div class="logo">
+          <img src="/images/all.png" alt="" />
+          <p>WELCOME TO THE GAME</p>
+          <br />
+        </div>
+        <div id="info">
+          <div id="player-computer-info">
+            <div id="info-box">
+              <p>Player</p>
+              <br />
+              <p id="player">You choosed:</p>
+              <p id="playerPointshow">Player Point:</p>
+            </div>
+            <div id="info-box">
+              <p>Computer</p>
+              <br />
+              <p id="computer">Computer choosed:</p>
+              <p id="computerPointshow">Computer Point:</p>
+            </div>
+          </div>
+
+          <p id="result">Result:</p>
+        </div>
+      </div>
+
+      <div id="addedBtn">
+        <div class="box">
+          <img src="/images/rock.png" alt="" />
+          <a class="btn neon-button" id="rock">ROCK</a>
+        </div>
+        <div class="box">
+          <img src="/images/paper1.png" alt="" />
+          <a class="btn neon-button" id="paper">PAPER</a>
+        </div>
+        <div class="box">
+          <img src="/images/scissors.png" alt="" />
+          <a class="btn neon-button" id="scissors">SCISSORS</a>
+        </div>
+      </div>
+    </div>
+
     <script src="/javascript.js"></script>
   </body>
 </html>
